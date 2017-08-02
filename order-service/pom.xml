@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>cn.cherish.springcloud</groupId>
+		<artifactId>eureka-order</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<artifactId>order-service</artifactId>
+	<packaging>jar</packaging>
+
+	<name>order-service</name>
+	<description>order-service project for Spring Boot</description>
+
+	<dependencies>
+        <!--关联dal-->
+        <dependency>
+            <groupId>cn.cherish.springcloud</groupId>
+            <artifactId>order-dal</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>cn.cherish.springcloud</groupId>
+			<artifactId>order-service-api</artifactId>
+		</dependency>
+
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>${curator.version}</version>
+        </dependency>
+
+		<dependency>
+			<groupId>com.alibaba.rocketmq</groupId>
+			<artifactId>rocketmq-client</artifactId>
+			<version>3.6.2.Final</version>
+		</dependency>
+    </dependencies>
+
+</project>

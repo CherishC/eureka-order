@@ -1,0 +1,34 @@
+server:
+  port: 8781
+  tomcat:
+    uri-encoding: UTF-8
+
+eureka:
+  instance:
+      hostname: 39.108.67.111
+  client:
+    serviceUrl:
+      defaultZone: http://119.23.30.142:8761/eureka/
+
+zookeeper:
+  connectString: 119.23.30.142:2181,39.108.67.111:2181,39.108.151.46:2181
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: service-order
+  datasource:
+      url: jdbc:mysql://localhost:3306/springcloud_order?characterEncoding=utf8
+      username: root
+      password: caimengyuan
+  jpa:
+    database: MYSQL
+    show-sql: true
+  ## Hibernate ddl auto (validate|create|create-drop|update)
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
