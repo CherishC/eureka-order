@@ -12,8 +12,16 @@
         <logger name="org.hibernate.SQL" level="DEBUG"/>
         <logger name="org.hibernate" level="INFO"/>
         <logger name="cn.cherish.springcloud" level="DEBUG"/>
+
+        <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+            <destination>39.108.67.111:4567</destination>
+            <!-- encoder is required -->
+            <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" />
+        </appender>
+
         <root level="INFO">
             <appender-ref ref="console"/>
+            <appender-ref ref="stash"/>
         </root>
     </springProfile>
 
